@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%.15thread] %logger{36} [%file:%line] - %.-4096msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <springProfile name="dev, staging">
+        <!-- configuration to be enabled when the "dev" or "staging" profiles are active -->
+        <root level="debug">
+            <appender-ref ref="console" />
+        </root>
+
+
+    </springProfile>
+
+</configuration>
